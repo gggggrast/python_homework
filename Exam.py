@@ -21,6 +21,8 @@ elif level == "hard":
         if RandomLetter not in num:
             num.append(RandomLetter)
     hint = input("是否需要提示?(Y/N)")#生成四个不重复字母
+    while hint != "Y" and hint != "N":
+        hint = input("错误，请重新输入:")
 elif level == "hell":
     num = []
     resource = ['1','2','3','4','5','6','7','8','9']
@@ -34,6 +36,9 @@ elif level == "hell":
         if element not in num:
             num.append(element)
     hint = input("是否需要提示?(Y/N)")#生成四个不重复数字、字母
+    while hint != "Y" and hint != "N":
+        hint = input("错误，请重新输入:")
+
 
 if level == "hard" and hint == "Y":
     print(num[random.randint(0,3)])
@@ -131,7 +136,7 @@ while A<4 and level == "normal":
 
 while A<4 and level == "hard":
     guess = input("请输入猜测:")
-    judge(guess,num)
+    judge2(guess,num)
     if A == 4:
         break#胜利时跳出循环
     A=0
